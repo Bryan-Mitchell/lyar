@@ -27,8 +27,7 @@
 						</li>
 					</ul>
 					<input type="hidden" name="id" value="{{ question.qid }}">
-					{% if not_mine(current_user.uid, question.qid) %}<input style="border: 1px solid #757575;" type="submit">{% end if %}
-				</fieldset>
+					{% if not_mine(current_user.uid, question.qid) %} <input style="border: 1px solid #757575;" type="submit" {{is_disabled(current_user.uid, question.qid) }}> {% end if %} 
 			</form>
 		{% end for %}
 		</section>
